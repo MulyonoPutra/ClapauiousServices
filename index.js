@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 
 
 const authRoutes = require('./src/routers/AuthRoute');
+const movieRoutes = require('./src/routers/MovieRoute');
 
 app.use(bodyParser.json());
 
@@ -34,6 +35,8 @@ app.use(
 );
 
 app.use('/v1/auth', authRoutes);
+app.use('/v1/movies', movieRoutes);
+
 
 app.use((error, request, response, next) => {
   response?.status(500).send({ message: error?.message });
