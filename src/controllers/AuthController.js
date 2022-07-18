@@ -49,7 +49,7 @@ exports.updated = (req, res, next) => {
     name: req.body?.name,
     email: req.body?.email,
     phone: req.body?.phone,
-    images: req.file.path.replace(/\\/g, '/'),
+    images: req.file?.path.replace(/\\/g, '/'),
     address: req.body?.address,
     city: req.body?.city,
     state: req.body?.state,
